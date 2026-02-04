@@ -1,0 +1,250 @@
+:root {
+  --bg-color: #262626;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --primary: #63c652; 
+  --accent: #1f522f; 
+  --text-muted: #a1a1a1;
+  --easy: #00b8a3;
+  --medium: #ffc01e;
+  --hard: #ff375f;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+.app-container {
+  padding: 16px;
+  background: radial-gradient(circle at top right, rgba(255, 161, 22, 0.1), transparent 40%);
+}
+
+header h1 {
+  font-size: 18px;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(90deg, #ffa116, #ffc01e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tabs button.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Views */
+.view {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Inputs */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button#save-user-btn, button#search-friend-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Cards */
+.user-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-card h2 {
+  margin: 0 0 12px 0;
+  font-weight: 500;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item .label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.stat-item .value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.easy .value { color: var(--easy); }
+.medium .value { color: var(--medium); }
+.hard .value { color: var(--hard); }
+
+/* Recommendations */
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rec-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 3px solid var(--text-muted);
+  text-decoration: none;
+  color: var(--text-main);
+  transition: background 0.2s;
+}
+
+.rec-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rec-item .title {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.rec-item .meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.rec-item.Easy { border-color: var(--easy); }
+.rec-item.Medium { border-color: var(--medium); }
+.rec-item.Hard { border-color: var(--hard); }
+
+/* Friend List */
+.recent-activity h4 {
+  margin: 12px 0 8px 0;
+  font-size: 13px;
+  text-align: left;
+  color: var(--text-muted);
+}
+
+#friend-solved-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#friend-solved-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#friend-solved-list li:last-child {
+  border-bottom: none;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Utils */
+.hidden { display: none !important; }
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.text-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+}
+.loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 20px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode Companion</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>LeetCode Companion</h1>
+    </header>
+
+    <div class="tabs">
+      <button id="tab-me" class="active">Me</button>
+      <button id="tab-friends">Friends</button>
+    </div>
+
+    <main id="view-me" class="view active">
+      <div id="setup-section">
+        <input type="text" id="username-input" placeholder="Enter your username" />
+        <button id="save-user-btn">Save</button>
+      </div>
+
+      <div id="stats-section" class="hidden">
+        <div class="user-card">
+          <h2 id="display-username">Username</h2>
+          <div class="stats-grid">
+            <div class="stat-item easy">
+              <span class="label">Easy</span>
+              <span class="value" id="easy-count">0</span>
+            </div>
+            <div class="stat-item medium">
+              <span class="label">Med</span>
+              <span class="value" id="medium-count">0</span>
+            </div>
+            <div class="stat-item hard">
+              <span class="label">Hard</span>
+              <span class="value" id="hard-count">0</span>
+            </div>
+          </div>
+        </div>
+
+        <h3>Recommended for You</h3>
+        <div id="recommendations-list" class="recommendations">
+          <!-- Items will be injected here -->
+          <div class="loading">Loading recommendations...</div>
+        </div>
+        
+        <button id="refresh-btn" class="secondary-btn">Refresh Data</button>
+        <button id="change-user-btn" class="text-btn">Change User</button>
+      </div>
+    </main>
+
+    <main id="view-friends" class="view hidden">
+      <div class="search-bar">
+        <input type="text" id="friend-input" placeholder="Friend's username" />
+        <button id="search-friend-btn">Search</button>
+      </div>
+
+      <div id="friend-result" class="hidden">
+        <div class="user-card friend-card">
+          <h2 id="friend-username">Friend</h2>
+          <div class="stats-grid">
+            <div class="stat-item all">
+              <span class="label">Total</span>
+              <span class="value" id="friend-total">0</span>
+            </div>
+          </div>
+          <div class="recent-activity">
+            <h4>Recently Solved</h4>
+            <ul id="friend-solved-list">
+              <!-- List items -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

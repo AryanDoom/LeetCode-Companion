@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "LeetCode Companion",
+    "version": "1.0",
+    "description": "Track your progress, get recommendations, and spy on friends.",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "https://alfa-leetcode-api.onrender.com/*",
+        "https://leetcode.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
