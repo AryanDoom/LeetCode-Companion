@@ -1,13 +1,14 @@
 :root {
-  --bg-color: #262626;
-  --card-bg: rgba(0, 0, 0, 0.05);
-  --primary: #63c652; 
-  --accent: #1f522f; 
-  --text-muted: #a1a1a1;
+  --bg-color: #000000;
+  --card-bg: rgba(10, 121, 30, 0.305);
+  --primary: #35ad20; 
+  --accent: #205230b6; 
+  --text-muted: #f1eaea;
   --easy: #00b8a3;
   --medium: #ffc01e;
   --hard: #ff375f;
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --text-main: #ffffff;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 
 .app-container {
   padding: 16px;
-  background: radial-gradient(circle at top right, rgba(255, 161, 22, 0.1), transparent 40%);
+  background: radial-gradient(circle at top right, rgba(112, 239, 118, 0.444), transparent 40%);
 }
 
 header h1 {
@@ -30,9 +31,7 @@ header h1 {
   margin: 0 0 16px 0;
   font-weight: 600;
   text-align: center;
-  background: linear-gradient(90deg, #ffa116, #ffc01e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
 }
 
 /* Tabs */
@@ -57,9 +56,9 @@ header h1 {
 }
 
 .tabs button.active {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(36, 36, 36, 0.255);
   color: var(--text-main);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(2, 69, 19, 0.2);
 }
 
 /* Views */
@@ -114,7 +113,7 @@ button:active {
 .user-card {
   background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(31, 91, 5, 0.1);
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 20px;
@@ -160,7 +159,7 @@ button:active {
 }
 
 .rec-item {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
   padding: 10px;
   border-radius: 8px;
   border-left: 3px solid var(--text-muted);
